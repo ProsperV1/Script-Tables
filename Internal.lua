@@ -16,7 +16,7 @@ shared['Prosper'] = {
                 ['Enabled'] = false,
                 ['Target'] = 'prosperity1019', -- Username / UserID
                 ['Mode'] = 'Full', -- Full // Animations // Emotes // Character
-                ['Body Type'] = 'Skinny', -- Skinny // Normal // Fat
+                ['Body Type'] = 'Skinny', -- Skinny // Normal // Fat; size only, preserves the target's body package.
             },
             ['Headless'] = true,
             ['Korblox'] = false,
@@ -29,7 +29,7 @@ shared['Prosper'] = {
                 ['Trigger Bot'] = 'C',
             },
 
-            ['Visuals'] = { ['ESP'] = 'T', },
+            ['Visuals'] = { ['ESP'] = 'T', ['Panel'] = 'Y', },
 
             ['Movement'] = {
                 ['Speed'] = 'V',
@@ -120,7 +120,6 @@ shared['Prosper'] = {
                 ['Y Axis'] = 'Full', -- Legit // Very Legit // Half // Full
                 ['Auto Prediction'] = {
                     ['Enabled'] = true, -- If this is true, values don't apply
-                    ['Scale'] = 1, -- Multiplier
                 },
                 ['Values'] = {
                     ['X'] = 0.1,
@@ -183,7 +182,6 @@ shared['Prosper'] = {
                 ['Enabled'] = false,
                 ['Auto Prediction'] = {
                     ['Enabled'] = false,
-                    ['Scale'] = 1, -- Multiplier
                 },
                 ['Values'] = {
                     ['X'] = 0.1,
@@ -194,17 +192,23 @@ shared['Prosper'] = {
 
             ['Snappiness'] = {
                 ['Enabled'] = true,
-                ['Type'] = 'Simple', -- Simple // Advanced
+                ['Type'] = 'Simple', -- Simple // Advanced // Custom
                 ['Curve Type'] = 'Easing', -- Easing // None
 
                 ['Simple'] = 0.124,
 
-                ['Advanced'] = { {0.124, 0.111} } -- X // Y
+                ['Advanced'] = { {0.124, 0.111} }, -- X // Y
+
+                ['Custom'] = {
+                    ['Strength'] = { {0.124, 0.111} }, -- X // Y
+                    ['Stickiness'] = 1, -- Multiplier while your crosshair is on the target (1 being normal, higher sticks harder, lower sticks less)
+                    ['Sensitivity'] = 100, -- 0 - 100 (how much of your Strength is applied)
+                },
             },
 
             ['Easing'] = {
                 ['Style'] = 'Linear', --[[ https://create.roblox.com/docs/reference/engine/enums/EasingStyle ]]
-                ['Direction'] = 'InOut' --[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
+                ['Direction'] = 'InOut', --[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
             },
 
             ['Humanization Features'] = { -- Use these features to pass clip-checks
@@ -221,7 +225,7 @@ shared['Prosper'] = {
                     ['Target Switch'] = { {15, 25} }, -- Min // Max (ms) when it switches to a different target
                 },
 
-                ['Speed Ramp'] = { -- Moves faster the closer your crosshair is to the target (scaled to your FOV size) and the faster they're moving.
+                ['Speed Ramp'] = { -- Moves faster the further your crosshair is from the target (scaled to your FOV size) and the faster they're moving.
                     ['Enabled'] = false,
                     ['Speed'] = { {4, 20} }, -- Min // Max target speed (studs/s)
                 },
@@ -310,6 +314,7 @@ shared['Prosper'] = {
                     ['Z'] = 0.1,
                 },
             },
+
 
             ['Weapon Delays'] = { -- You can put any weapon in their proper category, if the weapon you're using isn't in here, it acts as 0 delay.
                 ['Shotguns'] = {
@@ -410,6 +415,8 @@ shared['Prosper'] = {
 
             ['Range Enhancer'] = { ['Enabled'] = false, },
 
+            ['Wall Bang'] = { ['Enabled'] = false, }, 
+
         },
 
         ['Game Exclusive'] = { -- Features that only work in the game they're listed under.
@@ -423,7 +430,7 @@ shared['Prosper'] = {
 
             ['Das Hood'] = {
                 ['Infinite Range'] = { ['Enabled'] = false },
-                ['Wall Bang'] = { ['Enabled'] = false }, -- Only shoots through the map while Rage Mode is on
+                ['Wall Bang'] = { ['Enabled'] = false },
             },
         },
 
@@ -478,7 +485,7 @@ shared['Prosper'] = {
                 ['[Revolver]'] = 'Galaxy',
                 ['[Double-Barrel SG]'] = 'Galaxy',
                 ['[TacticalShotgun]'] = 'Galaxy',
-                ['[Knife]'] = 'Galactic-Red'
+                ['[Knife]'] = 'Love Kukri'
             },
 
             ['Beams'] = { -- Hood Customs Only
